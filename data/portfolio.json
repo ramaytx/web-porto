@@ -1,0 +1,210 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "admin123"
+  },
+  "profile": {
+    "name": "Dwi Ramadanu",
+    "location": "Cirebon, Indonesia",
+    "phone": "62 85183244246",
+    "email": "dwiramadanu01@gmail.com",
+    "linkedin": "https://linkedin.com/in/dwiramadanu",
+    "about": "IT Infrastructure Engineer dengan expertise di Network Management, Server Administration, dan System Security. Berpengalaman dalam end-to-end site deployment, troubleshooting sistem produksi, dan maintenance infrastruktur IT. Menguasai Mikrotik, Linux/Windows Server, Database Administration, dan Web Development. Lulusan S1 Teknik Elektro dengan foundation kuat dalam Programming dan Graphic Design."
+  },
+  "education": [
+    {
+      "id": "edu1",
+      "degree": "S1 Teknik Elektro",
+      "school": "Universitas 17 Agustus 1945 Cirebon",
+      "dates": "Jul 2020 - Sep 2024",
+      "gpa": "3.74/4.0",
+      "highlight": [
+        "Algoritma Pemrograman",
+        "Data Structures",
+        "Clean Code and Design Pattern"
+      ]
+    },
+    {
+      "id": "edu2",
+      "degree": "Tehnik Komputer dan Jaringan",
+      "school": "SMK Negeri 1 Kota Cirebon",
+      "dates": "Jun 2017 - Jul 2020",
+      "highlight": [
+        "Instalasi Jaringan",
+        "Troubleshooting Hardware/Software"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp1",
+      "company": "PT. ANGKASA RAYA JAYA",
+      "role": "Teknisi Komputer (Praktek Kerja Lapangan)",
+      "dates": "Jul 2019 - Sep 2019",
+      "highlight": [
+        "Diagnosa dan perbaikan hardware/software"
+      ]
+    },
+    {
+      "id": "exp2",
+      "company": "PT. PERTAMINA DRILLING SERVICES INDONESIA",
+      "role": "Pemeliharaan Alat Pengeboran",
+      "dates": "Sep 2023 - Okt 2023",
+      "highlight": [
+        "Troubleshooting & maintenance alat elektronika"
+      ]
+    },
+    {
+      "id": "exp3",
+      "company": "KSPPS SMS SYARIAH",
+      "role": "IT Infrastructure Project Engineer",
+      "dates": "Nov 2024 - saat ini",
+      "highlight": [
+        "End-to-End Site Deployment (Pembangunan Cabang Baru)",
+        "Server & System Administration",
+        "Network & Security Management",
+        "Maintenance & Data Integrity"
+      ]
+    },
+    {
+      "id": "experience1770191291539",
+      "company": "PT. SMS SYARIAH",
+      "role": "IT Operations Specialist / Application Support",
+      "dates": "Desember 2024 - saat ini",
+      "highlight": [
+        "Manajemen Tiket & Eskalasi: Mengelola sistem tiket dari Customer Service terkait kendala transaksi nasabah (gagal/pending) dengan respon cepat untuk menjaga kepuasan pengguna.",
+        "Analisis Log Transaksi: Melakukan audit dan pengecekan log transaksi secara mendalam di level server untuk mengidentifikasi akar permasalahan teknis.",
+        "Pemeliharaan Layanan (Service Maintenance): Bertanggung jawab atas stabilitas layanan aplikasi dengan melakukan restart service yang macet dan memastikan sinkronisasi data antar database berjalan akurat.",
+        "Operasional Deposit & Settlement: Mengelola proses deposit pengguna secara manual maupun sistem, memastikan saldo terinput dengan tepat sesuai dengan bukti transfer.",
+        "Rekonsiliasi Perbankan: Melakukan pemantauan rutin terhadap mutasi rekening bank perusahaan untuk memvalidasi transaksi masuk dan memastikan kecocokan data antara mutasi bank dengan sistem internal.",
+        "Integritas Data Keuangan: Menjaga keakuratan data transaksi harian dan memastikan tidak ada selisih saldo dalam database transaksi."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj1",
+      "title": "Company Profile Website - PT. Inspiro Mahakarya",
+      "description": "Perancangan dan pengembangan website company profile untuk bisnis dan pemasaran dengan fitur product catalog, contact form, dan responsive design.",
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "year": "2024",
+      "type": "Web Development"
+    },
+    {
+      "id": "proj2",
+      "title": "Network Infrastructure Management System",
+      "description": "Sistem manajemen infrastruktur jaringan untuk monitoring dan maintenance perangkat jaringan di Koperasi SMS, termasuk dokumentasi dan ticketing support.",
+      "tech": [
+        "Network Security",
+        "Server Management",
+        "Mikrotik"
+      ],
+      "year": "2024",
+      "type": "Networking"
+    },
+    {
+      "id": "proj3",
+      "title": "IT Asset Management Dashboard",
+      "description": "Dashboard untuk monitoring dan tracking aset IT perusahaan, inventory management, dan maintenance scheduling.",
+      "tech": [
+        "Python",
+        "SQL",
+        "Data Visualization"
+      ],
+      "year": "2023",
+      "type": "Software Development"
+    },
+    {
+      "id": "proj4",
+      "title": "Graphic Design Portfolio",
+      "description": "Koleksi desain grafis untuk berbagai keperluan komunikasi visual, branding, dan publikasi organisasi kemahasiswaan.",
+      "tech": [
+        "Adobe Photoshop",
+        "Illustrator",
+        "CorelDraw"
+      ],
+      "year": "2021-2023",
+      "type": "Design"
+    },
+    {
+      "title": "Musholla Al Kholis Digitalization & Infrastructure Project",
+      "description": "Merancang dan membangun platform informasi digital untuk renovasi Musholla Al Kholis di Siadem, Cirebon. Bertanggung jawab penuh atas manajemen server, deployment web menggunakan teknologi modern, dan pengelolaan data donasi secara transparan.",
+      "year": "2026",
+      "type": "IT Infrastructure & Web Deployment",
+      "tech": [
+        "Node.js",
+        "Nginx",
+        "Docker",
+        "Supabase",
+        "SQL"
+      ],
+      "id": "projects1770193542586"
+    },
+    {
+      "title": "Undangan Online",
+      "description": "Mengembangkan dan mengelola infrastruktur untuk platform undangan digital berbasis Software as a Service (SaaS). Proyek ini melibatkan pengelolaan ribuan data tamu dan memastikan stabilitas server saat menerima lonjakan trafik kunjungan undangan.",
+      "year": "2026",
+      "type": "Web Developer",
+      "tech": [
+        "Node.js",
+        "JavaScript",
+        "Nginx",
+        "Docker",
+        "PM2",
+        "Supabase/SQL."
+      ],
+      "id": "projects1770193701798"
+    },
+    {
+      "title": "Network & Security Infrastructure Deployment – Omega Space",
+      "description": "Merancang dan mengimplementasikan infrastruktur teknologi terpadu untuk Omega Space, mencakup sistem keamanan visual tingkat tinggi dan jaringan internet publik yang stabil. Proyek ini berfokus pada penyediaan konektivitas high-speed bagi pengguna serta pengawasan area secara menyeluruh melalui integrasi perangkat IP Camera.",
+      "year": "2025",
+      "type": "Infrastructure Engineer",
+      "tech": [
+        "MikroTik",
+        "IP Camera",
+        "NVR",
+        "PoE Switches",
+        "UTP Cat6",
+        "VLAN."
+      ],
+      "id": "projects1770194707114"
+    }
+  ],
+  "organization": [
+    {
+      "id": "org1",
+      "org": "Himpunan Mahasiswa Elektro",
+      "role": "Anggota & Ketua Divisi Komunikasi & Informasi",
+      "dates": "2021-2023",
+      "highlight": [
+        "Manajemen komunikasi internal & publikasi",
+        "Koordinasi event, promosi, dan strategi komunikasi"
+      ]
+    }
+  ],
+  "skills": [
+    "Networking & IT Infrastructure",
+    "Server Management",
+    "Network Security",
+    "Graphic Designer (Advanced)",
+    "HTML",
+    "Java",
+    "Python",
+    "SQL"
+  ],
+  "certifications": [
+    "Sertifikasi Graphic Design Technology",
+    "Juara 1 IT Network System Administration",
+    "Cyber Security Foundation",
+    "Olimpiade Jaringan Mikrotik-APJII"
+  ],
+  "publications": [
+    "Perancangan Company Profile untuk Bisnis & Pemasaran Melalui Website PT. Inspiro Mahakarya Cirebon. Jurnal CYCLOTRON, Vol 7 No 02 2024, hlm. 39-42"
+  ]
+}

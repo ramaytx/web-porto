@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+                <p class="text-blue-100 text-sm">Portfolio Management System</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm">Welcome, <strong>
+                        <%= username %>
+                    </strong></span>
+                <a href="/" target="_blank"
+                    class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50">
+                    View Site
+                </a>
+                <a href="/admin/logout"
+                    class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Education</p>
+                        <p class="text-3xl font-bold text-blue-600">
+                            <%= data.education.length %>
+                        </p>
+                    </div>
+                    <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Experience</p>
+                        <p class="text-3xl font-bold text-green-600">
+                            <%= data.experience.length %>
+                        </p>
+                    </div>
+                    <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Projects</p>
+                        <p class="text-3xl font-bold text-purple-600">
+                            <%= data.projects.length %>
+                        </p>
+                    </div>
+                    <svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm">Skills</p>
+                        <p class="text-3xl font-bold text-orange-600">
+                            <%= data.skills.length %>
+                        </p>
+                    </div>
+                    <svg class="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management Sections -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Manage Content</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Profile -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Profile Information</h3>
+                <p class="text-gray-600 mb-4">Update your personal information</p>
+                <a href="/admin/edit/profile"
+                    class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                    Edit Profile
+                </a>
+            </div>
+
+            <!-- Education -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Education</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.education.length %> entries
+                </p>
+                <a href="/admin/edit/education"
+                    class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                    Manage Education
+                </a>
+            </div>
+
+            <!-- Experience -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Experience</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.experience.length %> entries
+                </p>
+                <a href="/admin/edit/experience"
+                    class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                    Manage Experience
+                </a>
+            </div>
+
+            <!-- Projects -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Projects</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.projects.length %> entries
+                </p>
+                <a href="/admin/edit/projects"
+                    class="inline-block bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
+                    Manage Projects
+                </a>
+            </div>
+
+            <!-- Organization -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Organization</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.organization.length %> entries
+                </p>
+                <a href="/admin/edit/organization"
+                    class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
+                    Manage Organization
+                </a>
+            </div>
+
+            <!-- Skills -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Skills</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.skills.length %> skills
+                </p>
+                <a href="/admin/edit/skills"
+                    class="inline-block bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700">
+                    Manage Skills
+                </a>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Certifications</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.certifications.length %> certifications
+                </p>
+                <a href="/admin/edit/certifications"
+                    class="inline-block bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700">
+                    Manage Certifications
+                </a>
+            </div>
+
+            <!-- Publications -->
+            <div class="section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Publications</h3>
+                <p class="text-gray-600 mb-4">
+                    <%= data.publications.length %> publications
+                </p>
+                <a href="/admin/edit/publications"
+                    class="inline-block bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">
+                    Manage Publications
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>
+    <%= cv.profile.name %> - Portfolio
+  </title>
+  <meta name="description" content="Portfolio profesional <%= cv.profile.name %> - Teknik Elektro & IT Professional">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <div class="text-xl font-bold text-blue-900">
+        <%= cv.profile.name %>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="desktop-menu flex space-x-6 text-gray-700 font-medium text-sm">
+        <li><a href="#about" class="hover:text-green-500">Tentang</a></li>
+        <li><a href="#education" class="hover:text-green-500">Pendidikan</a></li>
+        <li><a href="#experience" class="hover:text-green-500">Pengalaman</a></li>
+        <li><a href="#projects" class="hover:text-green-500">Project</a></li>
+        <li><a href="#organization" class="hover:text-green-500">Organisasi</a></li>
+        <li><a href="#skills" class="hover:text-green-500">Skills</a></li>
+        <li><a href="#certifications" class="hover:text-green-500">Sertifikasi</a></li>
+        <li><a href="#publications" class="hover:text-green-500">Publikasi</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" onclick="closeMobileMenu()">Tentang</a></li>
+        <li><a href="#education" onclick="closeMobileMenu()">Pendidikan</a></li>
+        <li><a href="#experience" onclick="closeMobileMenu()">Pengalaman</a></li>
+        <li><a href="#projects" onclick="closeMobileMenu()">Project</a></li>
+        <li><a href="#organization" onclick="closeMobileMenu()">Organisasi</a></li>
+        <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+        <li><a href="#certifications" onclick="closeMobileMenu()">Sertifikasi</a></li>
+        <li><a href="#publications" onclick="closeMobileMenu()">Publikasi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto p-6 pt-24 container-mobile">
+    <!-- About Section -->
+    <section id="about" class="mb-12 text-center about-section section-mobile">
+      <!-- Profile Photo -->
+      <div class="mb-6">
+        <img src="/img/profile.jpg" alt="<%= cv.profile.name %>"
+          class="w-64 h-64 profile-image-mobile rounded-full mx-auto shadow-lg object-cover border-4 border-white profile-image"
+          style="object-position: center top;">
+      </div>
+
+      <h1 class="text-5xl font-extrabold text-blue-900 mb-2">
+        <%= cv.profile.name %>
+      </h1>
+      <p class="text-lg text-gray-600 mb-4">
+        <%= cv.profile.location %>
+      </p>
+
+      <div class="flex justify-center space-x-4 text-blue-600 mb-4 contact-links flex-wrap">
+        <a href="mailto:<%= cv.profile.email %>" class="contact-link hover:underline">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Email
+        </a>
+        <a href="<%= cv.profile.linkedin %>" target="_blank" class="contact-link hover:underline">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="tel:<%= cv.profile.phone %>" class="contact-link hover:underline">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span class="hidden sm:inline">
+            <%= cv.profile.phone %>
+          </span>
+          <span class="sm:hidden">Phone</span>
+        </a>
+        <a href="/downloads/CV_Dwi_Ramadanu.pdf" download
+          class="contact-link hover:underline bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download CV
+        </a>
+      </div>
+
+      <p class="max-w-lg mx-auto text-gray-700 px-4">
+        <%= cv.profile.about %>
+      </p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Pendidikan</h2>
+      <% cv.education.forEach(e=> { %>
+        <div
+          class="bg-white rounded-lg shadow-md p-6 card-mobile mb-6 card-hover hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl card-title font-semibold text-gray-800 mb-2">
+            <%= e.degree %>
+          </h3>
+          <p class="text-gray-600 italic mb-1">
+            <%= e.school %>
+          </p>
+          <p class="text-sm text-gray-500 mb-2">
+            <%= e.dates %>
+          </p>
+          <% if (e.gpa) { %>
+            <p class="text-sm text-gray-500 mb-3">IPK: <span class="font-bold text-blue-600">
+                <%= e.gpa %>
+              </span></p>
+            <% } %>
+              <ul class="list-disc mt-3 ml-5 text-gray-700 list-mobile">
+                <% e.highlight.forEach(h=> { %>
+                  <li class="mb-1">
+                    <%= h %>
+                  </li>
+                  <% }); %>
+              </ul>
+        </div>
+        <% }); %>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Pengalaman Kerja</h2>
+      <% cv.experience.forEach(exp=> { %>
+        <div
+          class="bg-white rounded-lg shadow-md p-6 card-mobile mb-6 card-hover hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl card-title font-semibold text-gray-800 mb-2">
+            <%= exp.role %>
+          </h3>
+          <p class="text-gray-600 italic mb-1">
+            <%= exp.company %>
+          </p>
+          <p class="text-sm text-gray-500 mb-3">
+            <%= exp.dates %>
+          </p>
+          <ul class="list-disc ml-5 text-gray-700 list-mobile">
+            <% exp.highlight.forEach(h=> { %>
+              <li class="mb-1">
+                <%= h %>
+              </li>
+              <% }); %>
+          </ul>
+        </div>
+        <% }); %>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Project</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 projects-grid">
+        <% cv.projects.forEach(project=> { %>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 card-mobile card-hover hover:shadow-lg transition-shadow duration-300">
+            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+              <h3 class="text-xl card-title font-semibold text-gray-800 flex-1">
+                <%= project.title %>
+              </h3>
+              <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                <%= project.year %>
+              </span>
+            </div>
+            <span class="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2 py-1 rounded mb-3">
+              <%= project.type %>
+            </span>
+            <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+              <%= project.description %>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <% project.tech.forEach(tech=> { %>
+                <span class="text-xs tech-pill bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-300">
+                  <%= tech %>
+                </span>
+                <% }); %>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+
+    <!-- Organization Section -->
+    <section id="organization" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Organisasi</h2>
+      <% cv.organization.forEach(org=> { %>
+        <div
+          class="bg-white rounded-lg shadow-md p-6 card-mobile mb-6 card-hover hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl card-title font-semibold text-gray-800 mb-2">
+            <%= org.role %>
+          </h3>
+          <p class="text-gray-600 italic mb-1">
+            <%= org.org %>
+          </p>
+          <p class="text-sm text-gray-500 mb-3">
+            <%= org.dates %>
+          </p>
+          <ul class="list-disc ml-5 text-gray-700 list-mobile">
+            <% org.highlight.forEach(h=> { %>
+              <li class="mb-1">
+                <%= h %>
+              </li>
+              <% }); %>
+          </ul>
+        </div>
+        <% }); %>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Skills</h2>
+      <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+        <% cv.skills.forEach(skill=> { %>
+          <span class="skill-tag">
+            <%= skill %>
+          </span>
+          <% }) %>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Sertifikasi</h2>
+      <div class="bg-white rounded-lg shadow-md p-6 card-mobile card-hover">
+        <ul class="list-disc ml-5 text-gray-700 list-mobile">
+          <% cv.certifications.forEach(cert=> { %>
+            <li class="mb-2">
+              <%= cert %>
+            </li>
+            <% }); %>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="mb-12 section-mobile">
+      <h2 class="text-3xl section-title font-bold mb-4 border-b-4 border-green-500 inline-block pb-1 text-blue-900">
+        Publikasi</h2>
+      <div class="bg-white rounded-lg shadow-md p-6 card-mobile card-hover">
+        <ul class="list-disc ml-5 text-gray-700 list-mobile">
+          <% cv.publications.forEach(pub=> { %>
+            <li class="mb-2 leading-relaxed">
+              <%= pub %>
+            </li>
+            <% }); %>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6 mt-12">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-gray-600">&copy; 2024 <%= cv.profile.name %>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.remove('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('mobileMenu');
+      const button = document.querySelector('.mobile-menu-button');
+
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
